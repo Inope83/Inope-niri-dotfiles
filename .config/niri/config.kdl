@@ -1,0 +1,16 @@
+// ============================================
+// Niri Main Configuration
+// ============================================
+
+// Environment
+environment {
+    PATH "/home/inope/.local/bin:/usr/local/bin:/usr/bin:/bin"
+}
+
+// Include all modular configurations
+include "input.kdl"
+include "output.kdl"
+include "layout.kdl"
+include "autostart.kdl"
+include "screenshot.kdl"
+include "binds.kdl"

@@ -1,0 +1,230 @@
+@import '../../.cache/wal/colors-waybar.css';
+
+/* ─── RESET ─────────────────────────────────────────── */
+* {
+    font-family: 'JetBrainsMono Nerd Font', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* ─── BAR WINDOW ─────────────────────────────────────── */
+window#waybar {
+    /* background: transparent; */
+    color: @foreground;
+}
+
+#waybar {
+    background: alpha(@background, 0.5);
+    border-radius: 20px;
+    border: 1px solid alpha(@foreground, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ─── SECTIONS ───────────────────────────────────────── */
+.modules-left {
+    padding: 0 6px;
+}
+
+.modules-center {
+    padding: 0 6px;
+}
+
+.modules-right {
+    padding: 0 6px;
+}
+
+/* ─── WORKSPACES ─────────────────────────────────────── */
+#workspaces {
+    padding: 0 2px;
+}
+
+#workspaces button {
+    padding: 2px 8px;
+    margin: 5px 1px;
+    border-radius: 14px;
+    color: alpha(@foreground, 0.3);
+    background: transparent;
+    transition: all 0.2s ease;
+    font-size: 13px;
+}
+
+#workspaces button:hover {
+    background: alpha(@foreground, 0.07);
+    color: alpha(@foreground, 0.7);
+}
+
+#workspaces button.focused {
+    color: @color2;
+    background: alpha(@color2, 0.15);
+}
+
+#workspaces button.empty {
+    color: alpha(@foreground, 0.15);
+}
+
+#workspaces button.urgent {
+    color: @color1;
+    background: alpha(@color1, 0.3);
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ─── SEPARATOR ──────────────────────────────────────── */
+#custom-sep,
+#custom-sep2 {
+    color: alpha(@foreground, 0.12);
+    padding: 0 4px;
+    font-size: 16px;
+}
+
+/* ─── TOOLTIPS ───────────────────────────────────────── */
+tooltip {
+    background: @background;
+    border: 1px solid alpha(@foreground, 0.2);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+tooltip label {
+    color: @foreground;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* ─── TRAY ───────────────────────────────────────────── */
+#tray {
+    padding: 0 8px;
+    margin: 5px 4px 5px 0;
+    background: transparent;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    animation: blink 1s linear infinite;
+}
+
+#tray menu {
+    background: @background;
+    border: 1px solid alpha(@foreground, 0.15);
+    border-radius: 14px;
+    padding: 4px;
+}
+
+#tray menuitem {
+    padding: 5px 14px;
+    border-radius: 10px;
+}
+
+#tray menuitem:hover {
+    background: alpha(@color4, 0.2);
+}
+
+/* ─── STATE MODIFICATIONS ────────────────────────────── */
+#pulseaudio.muted {
+    color: alpha(@color6, 0.4);
+    background: alpha(@color6, 0.1);
+}
+#network.disconnected {
+    color: alpha(@foreground, 0.3);
+}
+
+#battery.charging {
+    color: @color2;
+    background: alpha(@color2, 0.1);
+}
+
+#battery.warning {
+    color: @color3;
+    background: alpha(@color3, 0.1);
+}
+
+#battery.critical {
+    color: @color1;
+    background: alpha(@color1, 0.15);
+    animation: blink 1s linear infinite;
+}
+
+/* ─── RIGHT MODULES BASE ─────────────────────────────── */
+#pulseaudio,
+#bluetooth,
+#network,
+#cpu,
+#memory,
+#battery,
+#custom-power {
+    padding: 2px 12px;
+    margin: 5px 1px;
+    border-radius: 14px;
+    transition: all 0.2s ease;
+    font-size: 12px;
+}
+
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#custom-power:hover {
+    background: alpha(@foreground, 0.08);
+}
+
+/* ─── W A R N A   T E R K E L O M P O K ──────────────── */
+
+/* karuk: Workspace active & Cava */
+#workspaces button.active,
+#custom-cava {
+    color: @color4;
+}
+
+/* klaran: Clock */
+#clock {
+    color: @color2;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 20px;
+    border-radius: 16px;
+    background: alpha(@color2, 0.05);
+    border: 1px solid alpha(@color2, 0.08);
+    margin: 5px 0;
+}
+
+#clock:hover {
+    background: alpha(@color2, 0.1);
+}
+#custom-notification {
+    color: @color5;
+    padding: 0 12px;
+    margin: 0 2px;
+    border-radius: 14px;
+    transition: all 0.15s ease;
+}
+
+#custom-notification:hover {
+    background: alpha(@foreground, 0.08);
+}
+
+/*liman loss iha  modul */
+#pulseaudio,
+#bluetooth,
+#network,
+#cpu,
+#memory,
+#battery,
+#custom-power {
+    color: @color6;
+}

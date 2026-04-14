@@ -1,0 +1,17 @@
+* {
+    background-color: {background};
+    text-color: {foreground};
+}
+
+window {
+    background-color: {background};
+    border-radius: 16px;
+}
+
+element selected.normal {
+    background-color: {color4};
+}
+
+element-text {
+    text-color: {foreground};
+}

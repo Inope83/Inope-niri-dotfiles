@@ -1,0 +1,174 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "margin-top": 10,
+    "margin-bottom": 0,
+    "margin-left": 16,
+    "margin-right": 16,
+
+    "modules-left": [
+        "niri/workspaces",
+        "custom/sep",
+        "custom/cava"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/notification",
+        "bluetooth",
+        "network",
+        "cpu",
+        "memory",
+        "battery",
+        "custom/sep2",
+        "custom/power", 
+        "tray"
+    ],
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active":  "󰮯",
+            "focused": "󰊠",
+            "empty":   "󰊡",
+            "default": "󰊠"
+        },
+        "all-outputs": false,
+        "disable-click": false,
+        "current-only": false
+    },
+
+    "custom/sep": {
+        "format": "│",
+        "tooltip": false,
+        "interval": "once"
+    },
+
+    "custom/sep2": {
+        "format": "│",
+        "tooltip": false,
+        "interval": "once"
+    },
+"custom/power": {
+    "format": "⏻",
+    "tooltip-format": "Power Menu",
+    "on-click": "wlogout",  
+    "escape": true
+},    
+
+
+    "custom/cava": {
+        "exec": "~/.config/waybar/scripts/cava.sh",
+        "exec-on-event": false,
+        "interval": "once",
+        "tooltip": false,
+        "return-type": "json",
+        "format": "{}",
+        "on-click": "foot -e btop",
+        "max-length": 30,
+        "escape": false
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "󰥔  {:%H:%M:%S}",
+        "format-alt": "󰃭  {:%A, %d %B %Y}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months":   "<span color='#ffead3'><b>{}</b></span>",
+                "days":     "<span color='#ecc1d1'><b>{}</b></span>",
+                "weeks":    "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today":    "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱 {num_connections}",
+        "format-connected-battery": "󰂱 {device_battery_percentage}%",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "interval": 30,
+        "on-click": "rofi-bluetooth", 
+        "on-click-right": "rfkill toggle bluetooth",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}  {device_battery_percentage}%"
+    },
+
+    "network": {
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈁 {ifname}",
+        "format-disconnected": "󰤮",
+        "tooltip-format-wifi": "{essid}  {signalStrength}%\n󰩟 {ipaddr}",
+        "tooltip-format-ethernet": "{ifname}\n󰩟 {ipaddr}",
+        "max-length": 20,
+        "on-click": "ronema",
+        "interval": 3
+    },
+
+    "cpu": {
+        "format": "󰻠 {usage}%",
+        "format-alt": "󰻠 {load}",
+        "interval": 2,
+        "on-click": "foot -e btop",
+        "tooltip": true,
+        "tooltip-format": "Usage: {usage}%\nLoad: {load}"
+    },
+
+    "memory": {
+        "format": "󰍛 {}%",
+        "interval": 5,
+        "tooltip": true,
+        "tooltip-format": "Used: {used}GiB / {total}GiB"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "charging":    ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"],
+            "discharging": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+            "full": "󰁹"
+        },
+        "format-full": "󰁹 Full",
+        "interval": 30,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "tooltip": true,
+        "tooltip-format": "{time} remaining\nCapacity: {capacity}%"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8,
+        "reverse-direction": false
+    },
+    "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+        "notification": "",
+        "none": "",
+        "dnd-notification": "",
+        "dnd-none": ""
+    },
+    "return-type": "json",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+}
+}

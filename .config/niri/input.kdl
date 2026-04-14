@@ -1,0 +1,25 @@
+// ==================== INPUT ====================
+input {
+    keyboard {
+        xkb {
+            layout "us"
+        }
+        numlock
+    }
+    
+    touchpad {
+        tap
+        natural-scroll
+    }
+    
+    // Mouse - kosongkan saja untuk default
+    mouse {
+    }
+}
+
+// ==================== CURSOR ====================
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 16
+    hide-when-typing
+}

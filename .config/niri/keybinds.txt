@@ -1,0 +1,57 @@
+  SYSTEM
+──────────────────
+󰐥  Mod+Shift+E              Keluar Niri
+󰒓  Mod+Shift+P              Power Off Monitors
+󰗼  Mod+Escape               Toggle Shortcuts Inhibit
+
+  APPLICATIONS
+──────────────────
+󰅶  Mod+Return               Terminal (Kitty)
+󰻀  Mod+D                    Launcher (Fuzzel)
+󰕾  Mod+Shift+W              Ganti Wallpaper Random
+
+缾  WINDOW CONTROL
+──────────────────
+󰧑  Mod+Q                    Tutup Jendela
+󰸉  Mod+F                    Maximize Column
+󰹐  Mod+Shift+F              Fullscreen Window
+󰒊  Mod+V                    Toggle Floating
+󰒓  Mod+W                    Toggle Tabbed Display
+󰱯  Mod+R                    Switch Preset Width
+󰱯  Mod+Shift+R              Switch Preset Height
+
+󰝤  NAVIGATION
+──────────────────
+󱞣  Mod+H/J/K/L              Focus (Kiri/Bawah/Atas/Kanan)
+󱞣  Mod+Ctrl+H/J/K/L         Move Window
+󱞣  Mod+Shift+H/J/K/L        Focus Monitor
+󱞣  Mod+Shift+Ctrl+H/J/K/L   Move to Monitor
+󰔄  Mod+Home/End             Focus First/Last Column
+
+󰧑  WORKSPACE
+──────────────────
+󰧑  Mod+1..9                 Focus Workspace
+󰧑  Mod+Ctrl+1..9            Move Window to Workspace
+󰌌  Mod+U/I                  Focus Workspace (Up/Down)
+󰌌  Mod+Shift+U/I            Move Workspace
+
+󰛩  MEDIA & SCREEN
+──────────────────
+󰒮  XF86AudioRaiseVolume     Volume Up
+󰒮  XF86AudioLowerVolume     Volume Down
+󰝟  XF86AudioMute            Mute Volume
+󰍭  XF86AudioMicMute         Mute Microphone
+󰐌  XF86AudioPlay            Play/Pause
+󰐊  XF86AudioPrev            Previous Track
+󰐎  XF86AudioNext            Next Track
+󰃠  XF86MonBrightnessUp      Brightness Up
+󰃞  XF86MonBrightnessDown    Brightness Down
+󰹑  Print                    Screenshot
+󰹑  Ctrl+Print               Screenshot Screen
+󰹑  Alt+Print                Screenshot Window
+
+󰊠  OVERVIEW & HELP
+──────────────────
+󰊠  Mod+O                    Toggle Overview
+󰋼  Mod+Shift+Slash          Hotkey Overlay
+󰋼  Mod+Shift+B              Show This Menu

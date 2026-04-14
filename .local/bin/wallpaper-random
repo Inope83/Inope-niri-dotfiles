@@ -1,0 +1,39 @@
+#!/bin/bash
+
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+
+# Cek folder ada
+if [ ! -d "$WALLPAPER_DIR" ]; then
+    notify-send "❌ Error" "Folder $WALLPAPER_DIR tidak ditemukan"
+    exit 1
+fi
+
+# Pilih random wallpaper
+WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.webp" \) | shuf -n 1)
+
+if [ -z "$WALLPAPER" ]; then
+    notify-send "❌ Error" "Tidak ada wallpaper di $WALLPAPER_DIR"
+    exit 1
+fi
+
+# Set wallpaper dengan swww (bukan awww)
+if command -v swww &> /dev/null; then
+    swww img "$WALLPAPER" --transition-type any --transition-fps 60 --transition-duration 0.7
+else
+    notify-send "⚠️ Warning" "swww tidak terinstall"
+fi
+
+# Generate warna dengan pywal
+if command -v wal &> /dev/null; then
+    wal -i "$WALLPAPER" -q
+    # Reload kitty colors
+    kitty @ set-colors --all ~/.cache/wal/colors-kitty.conf 2>/dev/null || true
+else
+    notify-send "⚠️ Warning" "pywal tidak terinstall"
+fi
+
+# Reload waybar (SIGUSR2 untuk reload style)
+pkill -SIGUSR2 waybar 2>/dev/null || true
+
+# Notifikasi sukses
+notify-send "🎨 Wallpaper" "$(basename "$WALLPAPER")" -t 2000
