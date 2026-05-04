@@ -95,7 +95,7 @@ paru -S niri waybar kitty swww python-pywal fuzzel rofi-wayland \
 ### 2. Clone this config
 
 ```bash
-git clone https://github.com/yourusername/ghost ~/.config/niri
+git clone https://github.com/Inope83/ghost ~/.config/niri
 ```
 
 ### 3. Install scripts
